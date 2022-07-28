@@ -40,4 +40,6 @@ app = FastAPI(
 
 @app.get("/predict", tags=['Use'])
 def read_item(text: Union[str, None] = None):
-    return {"prediction": m.predict(q)}
+    if (str != None):
+        return {"prediction": m.predict(text)}
+    else: return {}
